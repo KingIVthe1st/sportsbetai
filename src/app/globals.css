@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0e17;
+  --bg-secondary: #0d1219;
+  --accent-cyan: #00f0ff;
+  --accent-green: #10b981;
+  --text-primary: #ffffff;
+  --text-muted: #94a3b8;
+  --card-bg: rgba(13, 18, 30, 0.75);
+  --card-border: rgba(0, 240, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text-primary);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 0%, #111827 0%, #0a0e17 70%);
+  background-size: 60px 60px, 60px 60px, auto;
+  font-family: Inter, sans-serif;
+  min-height: 100vh;
+}
+
+.glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+.cyan-glow:hover {
+  box-shadow: 0 0 28px rgba(0, 240, 255, 0.25);
+  transition: box-shadow 0.2s ease;
+}
