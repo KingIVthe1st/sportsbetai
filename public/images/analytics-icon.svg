@@ -1,0 +1,30 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <filter id="chartGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Rising bars chart -->
+  <rect x="20" y="80" width="15" height="30" fill="url(#chartGradient)" filter="url(#chartGlow)" opacity="0.8"/>
+  <rect x="42" y="60" width="15" height="50" fill="url(#chartGradient)" filter="url(#chartGlow)"/>
+  <rect x="64" y="40" width="15" height="70" fill="url(#chartGradient)" filter="url(#chartGlow)" opacity="0.9"/>
+  <rect x="86" y="25" width="15" height="85" fill="url(#chartGradient)" filter="url(#chartGlow)"/>
+  
+  <!-- Trend line -->
+  <path d="M 27 85 L 49 65 L 71 45 L 93 30" stroke="#00F0FF" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#chartGlow)"/>
+  
+  <!-- Data points -->
+  <circle cx="27" cy="85" r="4" fill="#00F0FF" filter="url(#chartGlow)"/>
+  <circle cx="49" cy="65" r="4" fill="#00F0FF" filter="url(#chartGlow)"/>
+  <circle cx="71" cy="45" r="4" fill="#10B981" filter="url(#chartGlow)"/>
+  <circle cx="93" cy="30" r="4" fill="#10B981" filter="url(#chartGlow)"/>
+</svg>
