@@ -216,7 +216,7 @@ export function LandingPage() {
             transition={{ delay: 1.0, duration: 0.6 }}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <CheckoutButton className="h-14 bg-[#00FF41] text-bg-primary font-bold text-lg px-10 rounded-xl hover:bg-[#00DD38] transition-all shadow-[0_0_30px_rgba(0,255,65,0.3)]" />
+            <CheckoutButton className="h-14 bg-[#00FF41] text-bg-primary font-bold text-base sm:text-lg px-6 sm:px-10 rounded-xl hover:bg-[#00DD38] transition-all shadow-[0_0_30px_rgba(0,255,65,0.3)]" />
             <a href="#weapons" className="text-sm text-white/40 hover:text-white/70 transition-colors font-medium uppercase tracking-widest border border-white/10 rounded-full px-6 py-3 hover:border-white/20">
               See The Arsenal ↓
             </a>
@@ -325,7 +325,7 @@ export function LandingPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="mt-10 text-base text-white/50 max-w-lg mx-auto"
+            className="mt-10 text-base text-white/55 max-w-lg mx-auto leading-relaxed"
           >
             It&rsquo;s a data war, and the sportsbooks have the heavy artillery. You&rsquo;re fighting them with instinct and public information.
             <br />
@@ -347,7 +347,7 @@ export function LandingPage() {
               className="text-center group"
               whileHover={{ y: -4 }}
             >
-              <div className="mx-auto mb-3 h-0.5 w-8 rounded-full bg-[#00FF41]/30 group-hover:bg-[#00FF41] transition-colors duration-300" />
+              <div className="mx-auto mb-3 h-1 w-8 rounded-full bg-[#00FF41]/30 group-hover:bg-[#00FF41] transition-colors duration-300" />
               <p className="text-4xl sm:text-5xl font-black text-[#00FF41]">
                 <Counter target={s.value} suffix={s.suffix} decimals={s.decimals || 0} />
               </p>
@@ -391,7 +391,7 @@ export function LandingPage() {
                 </div>
                 <h3 className="text-xl font-bold">{w.title}</h3>
                 <p className="mt-1 text-sm font-semibold text-[#00FF41]/70">{w.subtitle}</p>
-                <p className="mt-4 text-sm leading-relaxed text-white/50">{w.text}</p>
+                <p className="mt-4 text-[13px] sm:text-sm leading-relaxed text-white/60">{w.text}</p>
               </motion.div>
             ))}
           </div>
@@ -478,7 +478,7 @@ export function LandingPage() {
                 <div className="flex gap-0.5 text-[#00FF41] text-sm mb-4">
                   {[...Array(5)].map((_, j) => <span key={j}>★</span>)}
                 </div>
-                <p className="text-sm leading-relaxed text-white/70 italic">&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-sm leading-relaxed text-white/75 italic">&ldquo;{t.quote}&rdquo;</p>
                 <div className="mt-5 flex items-center gap-3 pt-4 border-t border-white/5">
                   <div className="h-10 w-10 rounded-full bg-[#00FF41]/10 border border-[#00FF41]/20 flex items-center justify-center text-sm font-bold text-[#00FF41]">
                     {t.name[0]}
@@ -666,7 +666,7 @@ export function LandingPage() {
       </section>
 
       {/* ─── FOOTER ─── */}
-      <footer className="border-t border-white/5 py-10 px-6">
+      <footer className="border-t border-white/5 py-10 px-6 pb-24 sm:pb-10">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
             <span className="text-sm font-semibold text-white/40">AI Sports Betting</span>
