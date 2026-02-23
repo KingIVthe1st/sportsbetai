@@ -167,9 +167,9 @@ export function LandingPage() {
         className="fixed left-0 top-0 z-50 w-full border-b border-white/5 bg-bg-primary/85 backdrop-blur-xl"
       >
         <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-6">
-          <div className="flex items-center gap-1.5 flex-shrink-0">
-            <span className="text-base sm:text-lg font-bold whitespace-nowrap">AI Sports Betting</span>
-            <span className="rounded-md bg-[#00FF41] px-1.5 sm:px-2.5 py-0.5 text-bg-primary text-[10px] sm:text-xs font-black tracking-wider">PRO</span>
+          <div className="flex items-center gap-1.5 flex-shrink-0 min-w-0">
+            <span className="text-sm sm:text-lg font-bold truncate">AI Sports Betting</span>
+            <span className="rounded-md bg-[#00FF41] px-1.5 sm:px-2.5 py-0.5 text-bg-primary text-[10px] sm:text-xs font-black tracking-wider flex-shrink-0">PRO</span>
           </div>
           <div className="hidden gap-8 text-xs font-medium uppercase tracking-[0.15em] text-white/50 md:flex">
             <a href="#weapons" className="hover:text-[#00FF41] transition-colors">Arsenal</a>
