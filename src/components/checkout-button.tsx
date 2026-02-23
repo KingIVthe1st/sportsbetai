@@ -19,7 +19,7 @@ export function CheckoutButton({ className }: { className?: string }) {
 
   return (
     <Button className={className} size="lg" onClick={handleCheckout} disabled={loading}>
-      {loading ? "Redirecting..." : "Get Today's Picks - $29/mo"}
+      {loading ? "Redirecting..." : "Join Today's Picks - $250/mo"}
     </Button>
   );
 }

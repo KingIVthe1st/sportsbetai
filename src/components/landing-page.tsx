@@ -137,9 +137,23 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
    ═══════════════════════════════════════════════════════════════ */
 export function LandingPage() {
   const heroRef = useRef<HTMLElement>(null);
+  const [navVisible, setNavVisible] = useState(true);
+  const lastScroll = useRef(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const current = window.scrollY;
+      if (current < 100) { setNavVisible(true); }
+      else if (current > lastScroll.current) { setNavVisible(false); }
+      else { setNavVisible(true); }
+      lastScroll.current = current;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -148,14 +162,14 @@ export function LandingPage() {
       {/* ─── NAV ─── */}
       <motion.nav
         initial={{ y: -80 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
+        animate={{ y: navVisible ? 0 : -100 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
         className="fixed left-0 top-0 z-50 w-full border-b border-white/5 bg-bg-primary/85 backdrop-blur-xl"
       >
         <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-6">
-          <div className="flex items-center gap-2.5">
-            <span className="text-lg font-bold">AI Sports Betting</span>
-            <span className="rounded-md bg-[#00FF41] px-2.5 py-0.5 text-bg-primary text-xs font-black tracking-wider">PRO</span>
+          <div className="flex items-center gap-1.5 flex-shrink-0">
+            <span className="text-base sm:text-lg font-bold whitespace-nowrap">AI Sports Betting</span>
+            <span className="rounded-md bg-[#00FF41] px-1.5 sm:px-2.5 py-0.5 text-bg-primary text-[10px] sm:text-xs font-black tracking-wider">PRO</span>
           </div>
           <div className="hidden gap-8 text-xs font-medium uppercase tracking-[0.15em] text-white/50 md:flex">
             <a href="#weapons" className="hover:text-[#00FF41] transition-colors">Arsenal</a>
@@ -167,7 +181,7 @@ export function LandingPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="rounded-full bg-[#00FF41] px-6 py-2.5 text-sm font-bold text-bg-primary hover:bg-[#00DD38] transition-colors"
+              className="rounded-full bg-[#00FF41] px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-bg-primary hover:bg-[#00DD38] transition-colors whitespace-nowrap"
             >
               Claim Your Edge
             </motion.button>
