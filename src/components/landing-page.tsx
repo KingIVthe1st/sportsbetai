@@ -23,21 +23,21 @@ const weapons = [
     icon: Brain,
     title: "The Alpha Engine",
     subtitle: "Eliminates human bias. Finds what you can't see.",
-    text: "Our AI analyzes 37 data points per game — player efficiency, travel fatigue, injury cascades, referee tendencies, pace-of-play matchups. It runs two competing models that must BOTH agree before flagging a bet. When they disagree, the pick gets trashed. You only receive A+ setups where the math is overwhelming.",
+    text: "Our AI analyzes 37 data points per game: player efficiency, travel fatigue, injury cascades, referee tendencies, pace of play matchups. It runs two competing models that must BOTH agree before flagging a bet. When they disagree, the pick gets trashed. You only receive A+ setups where the math is overwhelming.",
   },
   {
     step: "02",
     icon: TrendingUp,
     title: "The Signal Engine",
     subtitle: "Finds pricing mistakes before the books fix them.",
-    text: "Sportsbooks set lines based on public opinion and basic data. Our Signal Engine compares those lines to the TRUE statistical probability from our Alpha Engine. When the price is wrong — when the market undervalues a team — you get the alert before the line corrects. That gap is your profit.",
+    text: "Sportsbooks set lines based on public opinion and basic data. Our Signal Engine compares those lines to the TRUE statistical probability from our Alpha Engine. When the price is wrong, when the market undervalues a team, you get the alert before the line corrects. That gap is your profit.",
   },
   {
     step: "03",
     icon: Shuffle,
     title: "The Multiplier",
     subtitle: "Strategic parlays that compound your edge.",
-    text: "Finds correlated outcomes across different games and builds parlays where the math stacks in your favor. Every leg is validated independently — no weak links. It's the difference between a random 4-leg prayer and an engineered payout.",
+    text: "Finds correlated outcomes across different games and builds parlays where the math stacks in your favor. Every leg is validated independently, no weak links. It's the difference between a random 4-leg prayer and an engineered payout.",
   },
 ];
 
@@ -65,7 +65,7 @@ const testimonials = [
 const faqs = [
   { q: "Why is it $250/month?", a: "Because it works. We're not a discount tout service selling 50/50 guesses. This is a professional-grade data intelligence platform. The price filters out casual gamblers and ensures our members are serious. For a disciplined bettor, one or two wins a week covers the subscription. The rest is your profit." },
   { q: "How are you different from other pick sites?", a: "They sell opinions. We deliver a mathematical edge. Our dual-engine AI is the same level of technology used by financial trading firms. There are no 'gut feelings' or 'locks of the century.' Just data, probability, and relentless analysis." },
-  { q: "How can I trust your win rate?", a: "Every pick is tracked and timestamped. Our Brier Score (0.2151) and MAE (10.6) are public because — unlike a simple win/loss record — they can't be faked. When we say 70% confidence, it actually wins ~70% of the time." },
+  { q: "How can I trust your win rate?", a: "Every pick is tracked and timestamped. Our Brier Score (0.2151) and MAE (10.6) are public because, unlike a simple win/loss record, they can't be faked. When we say 70% confidence, it actually wins ~70% of the time." },
   { q: "What exactly do I get?", a: "Daily picks at 3pm ET: high-confidence spreads, totals, moneylines, and AI-optimized parlays. Each pick includes Edge Score, confidence rating, injury adjustments, and exact reasoning. Plus full access to The Multiplier parlay builder." },
   { q: "Can I cancel anytime?", a: "One click from your dashboard. No phone calls, no hassle. We only want members who are profiting and want to be here." },
 ];
@@ -77,7 +77,7 @@ const pricingFeatures = [
   "Spreads / Totals / Moneylines / Parlays",
   "Full Market & Injury Tracking",
   "37-Point Vector Analysis Per Game",
-  "Cancel Anytime — Zero Friction",
+  "Cancel Anytime, Zero Friction",
 ];
 
 /* ═══════════════════════════════════════════════════════════════
@@ -373,13 +373,13 @@ export function LandingPage() {
               <span className="text-white font-bold">Think of it like this:</span> A sportsbook sets a line based on public data and popular opinion. Most bettors bet with the crowd. The line moves. The books profit from the margin.
             </p>
             <p>
-              Our AI <span className="text-[#00FF41] font-semibold">ignores the noise.</span> It looks for mismatches between the <em>price</em> of a bet (the odds) and the <em>true statistical probability</em> of the outcome. When the market says a team has a 45% chance of covering, but our models calculate 58% — that&rsquo;s the edge.
+              Our AI <span className="text-[#00FF41] font-semibold">ignores the noise.</span> It looks for mismatches between the <em>price</em> of a bet (the odds) and the <em>true statistical probability</em> of the outcome. When the market says a team has a 45% chance of covering, but our models calculate 58%? That&rsquo;s the edge.
             </p>
             <p>
-              We find <span className="text-white font-semibold">1-3 games per day</span> where the market is meaningfully wrong. Not slightly off — <em>meaningfully</em> wrong. Those are the only picks that reach your inbox.
+              We find <span className="text-white font-semibold">1-3 games per day</span> where the market is meaningfully wrong. Not slightly off. <em>Meaningfully</em> wrong. Those are the only picks that reach your inbox.
             </p>
             <p className="text-white/40 text-xs italic pt-2 border-t border-white/5">
-              This is the same approach used by quantitative hedge funds — applied to sports markets where the inefficiencies are even larger.
+              This is the same approach used by quantitative hedge funds, applied to sports markets where the inefficiencies are even larger.
             </p>
           </motion.div>
 
@@ -520,8 +520,8 @@ export function LandingPage() {
           <div className="grid gap-6 md:grid-cols-3">
             {[
               { val: "68.3%", label: "Win Rate", sub: "Tracked across 835+ games. Not cherry-picked. Not hypothetical.", color: "text-[#00FF41]" },
-              { val: "0.2151", label: "Prediction Accuracy", sub: "When we say 70% confidence, it wins ~70% of the time. (A coin flip scores 0.25 — we're far better.)", color: "text-accent-cyan" },
-              { val: "10.6", label: "Score Precision", sub: "Average margin prediction error of just 10.6 points. We don't just pick winners — we predict scores.", color: "text-[#00FF41]" },
+              { val: "0.2151", label: "Prediction Accuracy", sub: "When we say 70% confidence, it wins ~70% of the time. (A coin flip scores 0.25, we're far better.)", color: "text-accent-cyan" },
+              { val: "10.6", label: "Score Precision", sub: "Average margin prediction error of just 10.6 points. We don't just pick winners, we predict scores.", color: "text-[#00FF41]" },
             ].map((m, i) => (
               <motion.div
                 key={m.label}
@@ -615,7 +615,7 @@ export function LandingPage() {
           <div className="grid gap-6 md:grid-cols-3">
             {[
               { num: "01", title: "Authorize Access", desc: "Create your account in under 60 seconds. Instant access. No setup fees." },
-              { num: "02", title: "Receive Intelligence", desc: "Daily picks at 3pm ET — fully analyzed with edge scores and confidence ratings." },
+              { num: "02", title: "Receive Intelligence", desc: "Daily picks at 3pm ET, fully analyzed with edge scores and confidence ratings." },
               { num: "03", title: "Execute & Profit", desc: "Use our data to place smarter, sharper, and more confident wagers." },
             ].map((step, i) => (
               <motion.div
@@ -703,7 +703,7 @@ export function LandingPage() {
                   transition={{ duration: 2.5, repeat: Infinity }}
                   className="inline-block bg-[#00FF41] text-bg-primary text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6"
                 >
-                  🔥 Limited Enrollment — Protecting Member Edge
+                  🔥 Limited Enrollment. Protecting Member Edge
                 </motion.span>
 
                 <p className="text-white/30 line-through text-lg">$500/month</p>
