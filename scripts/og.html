@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1200px; height: 630px;
+  background: #0a0e17;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden; position: relative;
+}
+
+/* Subtle grid */
+.grid-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Green glow top-right */
+.glow-green {
+  position: absolute; top: -150px; right: -100px;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,255,65,0.12), transparent 60%);
+}
+/* Cyan glow bottom-left */
+.glow-cyan {
+  position: absolute; bottom: -150px; left: -100px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,240,255,0.08), transparent 60%);
+}
+
+/* Accent line */
+.accent-line {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent 5%, #00FF41 30%, #00F0FF 70%, transparent 95%);
+}
+
+/* Layout */
+.content {
+  position: relative; z-index: 5;
+  display: flex; height: 100%; padding: 50px 60px;
+}
+.left {
+  flex: 1; display: flex; flex-direction: column; justify-content: center;
+}
+.right {
+  width: 380px; display: flex; align-items: center; justify-content: center;
+}
+
+/* Logo */
+.logo {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 30px;
+}
+.logo-text { font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 1px; }
+.pro-badge {
+  background: #00FF41; color: #0a0e17; font-size: 10px; font-weight: 900;
+  padding: 3px 8px; border-radius: 4px; letter-spacing: 2px;
+}
+
+/* Headline */
+.headline {
+  font-size: 52px; font-weight: 900; line-height: 1.05;
+  color: white; letter-spacing: -1px;
+}
+.headline .green { color: #00FF41; }
+
+/* Subtitle */
+.subtitle {
+  margin-top: 16px; font-size: 16px; color: rgba(255,255,255,0.5);
+  line-height: 1.5; max-width: 440px;
+}
+
+/* Guarantee badge */
+.guarantee {
+  margin-top: 24px; display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(0,255,65,0.08); border: 1px solid rgba(0,255,65,0.15);
+  padding: 8px 16px; border-radius: 8px;
+  font-size: 13px; color: #00FF41; font-weight: 700;
+}
+
+/* Right side - stats card */
+.stats-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(0, 240, 255, 0.12);
+  border-radius: 16px; padding: 32px;
+  backdrop-filter: blur(10px);
+  width: 320px;
+  box-shadow: 0 0 60px rgba(0,240,255,0.08);
+}
+.stats-card .label {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); margin-bottom: 20px;
+}
+.stat-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-val { font-size: 32px; font-weight: 900; color: #00FF41; }
+.stat-name { font-size: 12px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; }
+
+/* Price */
+.price-row {
+  margin-top: 20px; text-align: center;
+  padding-top: 16px; border-top: 1px solid rgba(0,255,65,0.15);
+}
+.price-old { font-size: 14px; color: rgba(255,255,255,0.25); text-decoration: line-through; }
+.price-new { font-size: 36px; font-weight: 900; color: #00FF41; }
+.price-sub { font-size: 14px; color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="glow-green"></div>
+  <div class="glow-cyan"></div>
+  <div class="accent-line"></div>
+
+  <div class="content">
+    <div class="left">
+      <div class="logo">
+        <span class="logo-text">AI Sports Betting</span>
+        <span class="pro-badge">PRO</span>
+      </div>
+      <div class="headline">
+        Stop Gambling.<br>
+        <span class="green">Start Exploiting.</span>
+      </div>
+      <div class="subtitle">
+        Our dual-engine AI finds pricing errors the sportsbooks miss. 68.3% documented win rate across 835+ games. Daily picks at 3pm ET.
+      </div>
+      <div class="guarantee">
+        🛡️ 30-Day Money-Back Guarantee
+      </div>
+    </div>
+    <div class="right">
+      <div class="stats-card">
+        <div class="label">Verified Performance</div>
+        <div class="stat-row">
+          <span class="stat-val">68.3%</span>
+          <span class="stat-name">Win Rate</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-val">835+</span>
+          <span class="stat-name">Games</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-val">37</span>
+          <span class="stat-name">Data Points</span>
+        </div>
+        <div class="price-row">
+          <span class="price-old">$500/mo</span><br>
+          <span class="price-new">$250</span>
+          <span class="price-sub">/month</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
