@@ -11,10 +11,10 @@ import { useRef, useEffect, useState } from "react";
    ═══════════════════════════════════════════════════════════════ */
 
 const stats = [
-  { value: 835, suffix: "+", label: "Exploited Games" },
-  { value: 68.3, suffix: "%", label: "Strike Rate", decimals: 1 },
-  { value: 37, suffix: "", label: "Vector Analysis" },
-  { value: 7.0, suffix: "+", label: "Profit Threshold", decimals: 1 },
+  { value: 835, suffix: "+", label: "Games Analyzed" },
+  { value: 68.3, suffix: "%", label: "Win Rate", decimals: 1 },
+  { value: 37, suffix: "", label: "Data Points Per Game" },
+  { value: 7.0, suffix: "+", label: "Minimum Edge Score", decimals: 1 },
 ];
 
 const weapons = [
@@ -22,22 +22,22 @@ const weapons = [
     step: "01",
     icon: Brain,
     title: "The Alpha Engine",
-    subtitle: "Finds outcomes hidden from the public eye.",
-    text: "Our primary AI simulates every game using a 37-point data profile — from player efficiency metrics to travel fatigue. Two independent models must agree before any pick reaches you. If they disagree, we don't send it. You only get A+ setups.",
+    subtitle: "Eliminates human bias. Finds what you can't see.",
+    text: "Our AI analyzes 37 data points per game — player efficiency, travel fatigue, injury cascades, referee tendencies, pace-of-play matchups. It runs two competing models that must BOTH agree before flagging a bet. When they disagree, the pick gets trashed. You only receive A+ setups where the math is overwhelming.",
   },
   {
     step: "02",
     icon: TrendingUp,
     title: "The Signal Engine",
-    subtitle: "Exploits the sportsbooks' pricing errors.",
-    text: "Scans market odds in real-time, cross-referencing our Alpha Engine to find statistical value the books haven't corrected. When a line is mispriced, you get the alert — before the edge disappears.",
+    subtitle: "Finds pricing mistakes before the books fix them.",
+    text: "Sportsbooks set lines based on public opinion and basic data. Our Signal Engine compares those lines to the TRUE statistical probability from our Alpha Engine. When the price is wrong — when the market undervalues a team — you get the alert before the line corrects. That gap is your profit.",
   },
   {
     step: "03",
     icon: Shuffle,
     title: "The Multiplier",
-    subtitle: "Engineered parlays, not random stacks.",
-    text: "Identifies correlated outcomes to construct high-probability, high-payout parlays. Every leg is AI-validated independently — so you never stack a parlay with a weak link dragging it down.",
+    subtitle: "Strategic parlays that compound your edge.",
+    text: "Finds correlated outcomes across different games and builds parlays where the math stacks in your favor. Every leg is validated independently — no weak links. It's the difference between a random 4-leg prayer and an engineered payout.",
   },
 ];
 
@@ -348,6 +348,96 @@ export function LandingPage() {
         </div>
       </section>
 
+      {/* ─── HOW THE EDGE WORKS (Plain English) ─── */}
+      <section className="py-20 sm:py-28">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-[#00FF41]/50 mb-2">The Edge, Explained</p>
+            <h2 className="text-3xl sm:text-5xl font-black">Here&rsquo;s How We Beat The Books.</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="glass p-8 sm:p-10 space-y-6 text-sm sm:text-base leading-relaxed text-white/70"
+          >
+            <p>
+              <span className="text-white font-bold">Think of it like this:</span> A sportsbook sets a line based on public data and popular opinion. Most bettors bet with the crowd. The line moves. The books profit from the margin.
+            </p>
+            <p>
+              Our AI <span className="text-[#00FF41] font-semibold">ignores the noise.</span> It looks for mismatches between the <em>price</em> of a bet (the odds) and the <em>true statistical probability</em> of the outcome. When the market says a team has a 45% chance of covering, but our models calculate 58% — that&rsquo;s the edge.
+            </p>
+            <p>
+              We find <span className="text-white font-semibold">1-3 games per day</span> where the market is meaningfully wrong. Not slightly off — <em>meaningfully</em> wrong. Those are the only picks that reach your inbox.
+            </p>
+            <p className="text-white/40 text-xs italic pt-2 border-t border-white/5">
+              This is the same approach used by quantitative hedge funds — applied to sports markets where the inefficiencies are even larger.
+            </p>
+          </motion.div>
+
+          {/* Past Bet Proof */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="mt-8 glass p-8 sm:p-10 border border-[#00FF41]/10"
+          >
+            <div className="flex items-center gap-2 mb-5">
+              <Zap className="h-5 w-5 text-[#00FF41]" />
+              <h3 className="text-lg font-bold">Real Example: Why The AI Flagged DET +7.5</h3>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="space-y-3 text-sm text-white/60">
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span>Public betting:</span>
+                  <span className="text-white/80 font-semibold">78% on opponent</span>
+                </div>
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span>AI probability (cover):</span>
+                  <span className="text-[#00FF41] font-semibold">61.2%</span>
+                </div>
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span>Edge Score:</span>
+                  <span className="text-[#00FF41] font-semibold">8.4 / 10</span>
+                </div>
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span>Key factors:</span>
+                  <span className="text-white/80 font-semibold">Rest advantage, pace mismatch</span>
+                </div>
+              </div>
+              <div className="space-y-3 text-sm text-white/60">
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span>Opponent travel:</span>
+                  <span className="text-white/80 font-semibold">3rd game in 4 nights</span>
+                </div>
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span>Line movement:</span>
+                  <span className="text-accent-cyan font-semibold">Book slow to adjust</span>
+                </div>
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span>Dual model agreement:</span>
+                  <span className="text-[#00FF41] font-semibold">✓ Both confirmed</span>
+                </div>
+                <div className="flex justify-between pb-2">
+                  <span>Result:</span>
+                  <span className="text-[#00FF41] font-bold text-base">✓ DET covered by 12</span>
+                </div>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-white/30 italic">The public saw a bad team. Our AI saw a statistical opportunity. That&rsquo;s the edge.</p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ─── STATS ─── */}
       <section className="relative py-12 border-y border-white/5">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -429,9 +519,9 @@ export function LandingPage() {
 
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              { val: "68.3%", label: "Win Rate", sub: "Consistent wins across all major leagues", color: "text-[#00FF41]" },
-              { val: "0.2151", label: "Brier Score", sub: "A coin flip is 0.25. We are significantly better.", color: "text-accent-cyan" },
-              { val: "10.6", label: "MAE Points", sub: "We predict scores with chilling accuracy.", color: "text-[#00FF41]" },
+              { val: "68.3%", label: "Win Rate", sub: "Tracked across 835+ games. Not cherry-picked. Not hypothetical.", color: "text-[#00FF41]" },
+              { val: "0.2151", label: "Prediction Accuracy", sub: "When we say 70% confidence, it wins ~70% of the time. (A coin flip scores 0.25 — we're far better.)", color: "text-accent-cyan" },
+              { val: "10.6", label: "Score Precision", sub: "Average margin prediction error of just 10.6 points. We don't just pick winners — we predict scores.", color: "text-[#00FF41]" },
             ].map((m, i) => (
               <motion.div
                 key={m.label}
@@ -546,6 +636,44 @@ export function LandingPage() {
         </div>
       </section>
 
+      {/* ─── WHO THIS IS FOR ─── */}
+      <section className="py-16 sm:py-20">
+        <div className="max-w-3xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="glass p-8 sm:p-10"
+          >
+            <h3 className="text-2xl sm:text-3xl font-black mb-6">This Is For You If:</h3>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                "You treat betting as an investment, not entertainment",
+                "You're tired of losing to gut feelings and Twitter \"experts\"",
+                "You understand that a 68% edge compounds over time",
+                "You bet $50-500+ per game and want real data behind every wager",
+                "You value your time and want picks delivered, analyzed, and ready",
+                "You're disciplined enough to follow a system, not chase losses",
+              ].map((item, i) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06, duration: 0.4 }}
+                  className="flex items-start gap-2.5"
+                >
+                  <Check className="h-4 w-4 text-[#00FF41] mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-white/65">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+            <p className="mt-6 text-xs text-white/30 italic border-t border-white/5 pt-4">This is not for casual gamblers looking for a lottery ticket. This is a professional tool for serious bettors.</p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ─── PRICING ─── */}
       <section id="pricing" className="py-20 sm:py-28">
         <div className="max-w-3xl mx-auto px-6">
@@ -614,7 +742,13 @@ export function LandingPage() {
                 </motion.div>
               </div>
 
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-[10px] font-mono uppercase tracking-wider text-white/25">
+              {/* Money-back guarantee */}
+              <div className="mt-6 p-4 rounded-xl border border-[#00FF41]/10 bg-[#00FF41]/[0.03] text-center">
+                <p className="text-sm font-bold text-[#00FF41]">🛡️ 30-Day Money-Back Guarantee</p>
+                <p className="text-xs text-white/40 mt-1">If our picks don&rsquo;t deliver a positive month, we refund you in full. No questions. We bet on ourselves.</p>
+              </div>
+
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-5 text-[10px] font-mono uppercase tracking-wider text-white/25">
                 <div className="flex items-center gap-1.5"><Shield className="h-3.5 w-3.5" /><span>Secure Payment</span></div>
                 <div className="flex items-center gap-1.5"><Lock className="h-3.5 w-3.5" /><span>Cancel Anytime</span></div>
                 <div className="flex items-center gap-1.5"><Zap className="h-3.5 w-3.5" /><span>Instant Access</span></div>
